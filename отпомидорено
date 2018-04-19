@@ -1,0 +1,11 @@
+#!/bin/sh
+
+LOG_NAME=~/pomodoro_log.csv
+
+first_arg="$1"
+shift
+echo -n "$first_arg;\"$@\";" >> $LOG_NAME
+date +"%T ; %D" >> $LOG_NAME
+
+
+# grep -c `date +%D` pomodoro_log.csv
